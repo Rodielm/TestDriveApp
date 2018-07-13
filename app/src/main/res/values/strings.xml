@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">TestAppCar</string>
+    <string name="carname">CarName</string>
+    <string name="carprice">CarPrice</string>
+    <string name="todo">TODO</string>
+    <string name="test_drive">Test Drive</string>
+    <string name="caracteristica">Caracteristica</string>
+    <string name="enviar_datos">Enviar Datos</string>
+</resources>
