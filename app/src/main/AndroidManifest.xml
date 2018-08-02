@@ -26,6 +26,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".CarDetailActivity" />
         </activity>
+        <activity android:name=".AddCarActivity"></activity>
     </application>
 
 </manifest>
