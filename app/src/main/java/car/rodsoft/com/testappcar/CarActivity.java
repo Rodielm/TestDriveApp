@@ -1,5 +1,6 @@
 package car.rodsoft.com.testappcar;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -15,12 +16,13 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import car.rodsoft.com.testappcar.Model.Car;
 
-public class AddCarActivity extends AppCompatActivity {
+public class CarActivity extends AppCompatActivity {
 
     private EditText editModel;
     private EditText editPrice;
     private EditText editURL;
     private Button btnSave;
+    private Button btnCancel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,12 +33,19 @@ public class AddCarActivity extends AppCompatActivity {
         editPrice = findViewById(R.id.edPrice);
         editURL = findViewById(R.id.edUrl);
         btnSave = findViewById(R.id.btnSave);
-
+        btnCancel = findViewById(R.id.btnCancel);
 
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 addCar();
+            }
+        });
+
+        btnCancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                cancelActivity();
             }
         });
 
@@ -64,6 +73,11 @@ public class AddCarActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    private void cancelActivity() {
+        Intent mainActivity = new Intent(CarActivity.this, MainActivity.class);
+        startActivity(mainActivity);
     }
 
     private void makeMessage(String msj) {

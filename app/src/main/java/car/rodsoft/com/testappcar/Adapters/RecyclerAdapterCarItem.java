@@ -54,12 +54,12 @@ public class RecyclerAdapterCarItem extends RecyclerView.Adapter<RecyclerAdapter
                 .into(holder.carImg);
 
         holder.carName.setText(cars.get(position).getName());
-        holder.carPrice.setText("US$" + cars.get(position).getPrice().toString());
+        holder.carPrice.setText("US$" + cars.get(position).getPrice().toString() );
         holder.parentLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Log.d(TAG, "onClick: clicked on:" + cars.get(position).getName());
-                Toast.makeText(mContext, cars.get(position).getName(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(mContext, cars.get(position).getName() + " " + cars.get(position).getYear(), Toast.LENGTH_SHORT).show();
             }
         });
     }

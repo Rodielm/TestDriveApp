@@ -9,8 +9,6 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ListView;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -21,10 +19,8 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
-import car.rodsoft.com.testappcar.Adapters.AdapterCarItem;
 import car.rodsoft.com.testappcar.Adapters.RecyclerAdapterCarItem;
 import car.rodsoft.com.testappcar.Model.Car;
-import car.rodsoft.com.testappcar.Utils.CarUtils;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -37,8 +33,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Log.d(TAG, "onCreate: started");
-
-
         initCars();
 //        final ListView listCars = findViewById(R.id.listCars);
         final FloatingActionButton addCar = findViewById(R.id.addCar);
@@ -62,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void openActivity() {
-        Intent addCar = new Intent(MainActivity.this, AddCarActivity.class);
+        Intent addCar = new Intent(MainActivity.this, CarActivity.class);
         startActivity(addCar);
     }
 
