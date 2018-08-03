@@ -50,7 +50,7 @@ public class RecyclerAdapterCarItem extends RecyclerView.Adapter<RecyclerAdapter
 
         Glide.with(mContext)
                 .asBitmap()
-                .load(cars.get(position).getImg())
+                .load(cars.get(position).getUrlImage())
                 .into(holder.carImg);
 
         holder.carName.setText(cars.get(position).getName());

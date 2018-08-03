@@ -9,6 +9,7 @@ public class Car implements Serializable {
     private int year;
     private Double price;
     private int img ;
+    private String urlImage;
 
     public Car(){}
 
@@ -18,6 +19,23 @@ public class Car implements Serializable {
         this.price = price;
         this.year = year;
         this.img = img;
+    }
+
+    public Car(int id, String name, int year, Double price, int img, String urlImage) {
+        this.id = id;
+        this.name = name;
+        this.year = year;
+        this.price = price;
+        this.img = img;
+        this.urlImage = urlImage;
+    }
+
+    public String getUrlImage() {
+        return urlImage;
+    }
+
+    public void setUrlImage(String urlImage) {
+        this.urlImage = urlImage;
     }
 
     public String getName() {

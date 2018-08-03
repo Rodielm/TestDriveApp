@@ -1,6 +1,7 @@
 package car.rodsoft.com.testappcar;
 
 import android.content.Intent;
+import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -8,7 +9,14 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,14 +31,15 @@ public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
     private List<Car> cars = new ArrayList<>();
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Log.d(TAG, "onCreate: started");
 
-        initCars();
 
+        initCars();
 //        final ListView listCars = findViewById(R.id.listCars);
         final FloatingActionButton addCar = findViewById(R.id.addCar);
         addCar.setOnClickListener(new View.OnClickListener() {
@@ -59,14 +68,32 @@ public class MainActivity extends AppCompatActivity {
 
     private void initCars() {
         Log.d(TAG, "initCars");
-        cars = CarUtils.getDummyCars();
-        initRecyclerView();
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference myRef = database.getReference("cars");
+        RecyclerAdapterCarItem adapter = new RecyclerAdapterCarItem(this, cars);
+        ValueEventListener eventListener = new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for (DataSnapshot ds : dataSnapshot.getChildren()) {
+                    Car car = ds.getValue(Car.class);
+                    cars.add(car);
+                }
+                adapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        };
+        myRef.addListenerForSingleValueEvent(eventListener);
+        initRecyclerView(adapter);
     }
 
-    private void initRecyclerView() {
+
+    private void initRecyclerView(RecyclerAdapterCarItem adapter) {
         Log.d(TAG, "initRecyclerView: init recyclerview");
         RecyclerView recyclerView = findViewById(R.id.listCarsRecycle);
-        RecyclerAdapterCarItem adapter = new RecyclerAdapterCarItem(this, cars);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
