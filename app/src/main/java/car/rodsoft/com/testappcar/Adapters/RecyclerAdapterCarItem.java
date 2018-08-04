@@ -2,6 +2,7 @@ package car.rodsoft.com.testappcar.Adapters;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.widget.RecyclerView;
@@ -19,6 +20,7 @@ import com.bumptech.glide.Glide;
 import java.util.ArrayList;
 import java.util.List;
 
+import car.rodsoft.com.testappcar.CarActivity;
 import car.rodsoft.com.testappcar.Model.Car;
 import car.rodsoft.com.testappcar.R;
 
@@ -30,7 +32,7 @@ public class RecyclerAdapterCarItem extends RecyclerView.Adapter<RecyclerAdapter
     private Context mContext;
 
 
-    public RecyclerAdapterCarItem( Context mContext,List<Car> cars) {
+    public RecyclerAdapterCarItem(Context mContext, List<Car> cars) {
         this.cars = cars;
         this.mContext = mContext;
     }
@@ -54,12 +56,16 @@ public class RecyclerAdapterCarItem extends RecyclerView.Adapter<RecyclerAdapter
                 .into(holder.carImg);
 
         holder.carName.setText(cars.get(position).getName());
-        holder.carPrice.setText("US$" + cars.get(position).getPrice().toString() );
+        holder.carPrice.setText("US$" + cars.get(position).getPrice().toString());
         holder.parentLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.d(TAG, "onClick: clicked on:" + cars.get(position).getName());
-                Toast.makeText(mContext, cars.get(position).getName() + " " + cars.get(position).getYear(), Toast.LENGTH_SHORT).show();
+                Intent i = new Intent(v.getContext(), CarActivity.class);
+                i.putExtra("car", cars.get(position));
+
+                v.getContext().startActivity(i);
+//                Log.d(TAG, "onClick: clicked on:" + cars.get(position).getName());
+//                Toast.makeText(mContext, cars.get(position).getName() + " " + cars.get(position).getYear(), Toast.LENGTH_SHORT).show();
             }
         });
     }
