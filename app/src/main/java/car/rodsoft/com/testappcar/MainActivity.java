@@ -27,13 +27,14 @@ public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
     private List<Car> cars = new ArrayList<>();
 
-
+//sadsadsad
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Log.d(TAG, "onCreate: started");
         initCars();
+
 //        final ListView listCars = findViewById(R.id.listCars);
         final FloatingActionButton addCar = findViewById(R.id.addCar);
         addCar.setOnClickListener(new View.OnClickListener() {
@@ -83,7 +84,6 @@ public class MainActivity extends AppCompatActivity {
         myRef.addListenerForSingleValueEvent(eventListener);
         initRecyclerView(adapter);
     }
-
 
     private void initRecyclerView(RecyclerAdapterCarItem adapter) {
         Log.d(TAG, "initRecyclerView: init recyclerview");

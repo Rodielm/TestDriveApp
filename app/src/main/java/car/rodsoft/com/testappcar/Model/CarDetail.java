@@ -2,24 +2,24 @@ package car.rodsoft.com.testappcar.Model;
 
 public class CarDetail {
 
-  private int id;
+  private String id;
   private String[] details;
   private int img;
 
     public CarDetail() {
     }
 
-    public CarDetail(int id, String[] details, int img) {
+    public CarDetail(String id, String[] details, int img) {
         this.id = id;
         this.details = details;
         this.img = img;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 

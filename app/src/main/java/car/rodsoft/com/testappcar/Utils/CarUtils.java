@@ -23,23 +23,23 @@ public class CarUtils {
 
         List<Car> cars = new ArrayList<>();
 
-        cars.add(new Car(1, "Toyota Corolla SE", 21900.00,2017 , R.drawable.car_toyota));
-        cars.add(new Car(2, "Mazda CX-5", 37000.00,2017 ,R.drawable.car_mazda));
-        cars.add(new Car(3, "Chevrolet Tahoe", 30000.00, 2011 ,R.drawable.car_chevrolet));
-        cars.add(new Car(4,"Jeep Grand Cherokee Trackhawk", 150000.00,2018 ,R.drawable.car_jeep));
-        cars.add(new Car(5, "Mini Cooper Countryman", 15450.00,2011 ,R.drawable.car_mini));
-        cars.add(new Car(6, "Chevrolet Camaro S S", 42900.00,2017 ,R.drawable.car_camaro));
-        cars.add(new Car(7, "Mazda 6", 16224.50,2014 ,R.drawable.car_mazda6));
-        cars.add(new Car(8, "Chevrolet Camaro ZL1", 110000.00,2018,R.drawable.car_camarozl));
-        cars.add(new Car(9, "Dodge Challenger", 57000.00,2018,R.drawable.car_challenger));
-        cars.add(new Car(10, "Dodge Challenger RT", 28900.00,2014 ,R.drawable.challengerrt));
+        cars.add(new Car("1", "Toyota Corolla SE", 21900.00,2017 , R.drawable.car_toyota));
+        cars.add(new Car("2", "Mazda CX-5", 37000.00,2017 ,R.drawable.car_mazda));
+        cars.add(new Car("3", "Chevrolet Tahoe", 30000.00, 2011 ,R.drawable.car_chevrolet));
+        cars.add(new Car("4","Jeep Grand Cherokee Trackhawk", 150000.00,2018 ,R.drawable.car_jeep));
+        cars.add(new Car("5", "Mini Cooper Countryman", 15450.00,2011 ,R.drawable.car_mini));
+        cars.add(new Car("6", "Chevrolet Camaro S S", 42900.00,2017 ,R.drawable.car_camaro));
+        cars.add(new Car("7", "Mazda 6", 16224.50,2014 ,R.drawable.car_mazda6));
+        cars.add(new Car("8", "Chevrolet Camaro ZL1", 110000.00,2018,R.drawable.car_camarozl));
+        cars.add(new Car("9", "Dodge Challenger", 57000.00,2018,R.drawable.car_challenger));
+        cars.add(new Car("10", "Dodge Challenger RT", 28900.00,2014 ,R.drawable.challengerrt));
 
         return cars;
     }
 
     public static List<CarDetail> getDummyCarDetail() {
         List<CarDetail> carsDetails = new ArrayList<>();
-        carsDetails.add(new CarDetail(1, new String[]{
+        carsDetails.add(new CarDetail("1", new String[]{
                 "Precio: US$ 21,900",
                 "Motor: 1.8, 4 cilindros",
                 "Exterior: Rojo",
@@ -51,7 +51,7 @@ public class CarUtils {
                 "Puertas: 5",
                 "Pasajeros: 5"
         }, R.drawable.car_toyota));
-        carsDetails.add(new CarDetail(2, new String[]{
+        carsDetails.add(new CarDetail("2", new String[]{
                 "Precio: US$ 37,000",
                 "Motor: 2.0 4 cilindros",
                 "Exterior: Negro",
@@ -63,7 +63,7 @@ public class CarUtils {
                 "Puertas: 5",
                 "Pasajeros: 5"
         }, R.drawable.car_mazda));
-        carsDetails.add(new CarDetail(3, new String[]{
+        carsDetails.add(new CarDetail("3", new String[]{
                 "Precio: US$ 19,800",
                 "Motor: 5.3, 8 cilindros",
                 "Exterior: Blanco",
@@ -75,7 +75,7 @@ public class CarUtils {
                 "Puertas: 5",
                 "Pasajeros: 7"
         }, R.drawable.car_chevrolet));
-        carsDetails.add(new CarDetail(4, new String[]{
+        carsDetails.add(new CarDetail("4", new String[]{
                 "Precio: US$ 150,000",
                 "Motor: 6.2, 4 cilindros, Supercharged",
                 "Exterior: Blanco",
@@ -87,7 +87,7 @@ public class CarUtils {
                 "Puertas: 5",
                 "Pasajeros: 5"
         }, R.drawable.car_jeep));
-        carsDetails.add(new CarDetail(5, new String[]{
+        carsDetails.add(new CarDetail("5", new String[]{
                 "Precio: US$ 15,450.00",
                 "Motor: 1.6, 4 cilindros",
                 "Exterior: Blanco",
@@ -99,7 +99,7 @@ public class CarUtils {
                 "Puertas: 5",
                 "Pasajeros: 4"
         }, R.drawable.car_mini));
-        carsDetails.add(new CarDetail(6, new String[]{
+        carsDetails.add(new CarDetail("6", new String[]{
                 "Precio: US$ 42,900",
                 "Motor: 6.2, 8 cilindros",
                 "Exterior: Amarillo",
@@ -111,7 +111,7 @@ public class CarUtils {
                 "Puertas: 5",
                 "Pasajeros: 4"
         }, R.drawable.car_camaro));
-        carsDetails.add(new CarDetail(7, new String[]{
+        carsDetails.add(new CarDetail("7", new String[]{
                 "Precio: US$ 16,224.50",
                 "Motor: 2.2, 4 cilindros",
                 "Exterior: Gris Plata",
@@ -123,7 +123,7 @@ public class CarUtils {
                 "Puertas: 4",
                 "Pasajeros: 5"
         }, R.drawable.car_mazda6));
-        carsDetails.add(new CarDetail(8, new String[]{
+        carsDetails.add(new CarDetail("8", new String[]{
                 "Precio: US$ 110,000",
                 "Motor: 8 cilindros, Supercharged",
                 "Exterior: Azul",
@@ -135,7 +135,7 @@ public class CarUtils {
                 "Puertas: 2",
                 "Pasajeros: 4"
         }, R.drawable.car_camarozl));
-        carsDetails.add(new CarDetail(9, new String[]{
+        carsDetails.add(new CarDetail("9", new String[]{
                 "Precio: US$ 57,000",
                 "Motor: 3.6, 6 cilindros",
                 "Exterior: Gris oscuro",
@@ -147,7 +147,7 @@ public class CarUtils {
                 "Puertas: 2",
                 "Pasajeros: 4"
         }, R.drawable.car_challenger));
-        carsDetails.add(new CarDetail(10, new String[]{
+        carsDetails.add(new CarDetail("10", new String[]{
                 "Precio: US$ 28,900",
                 "Motor: 3.5, 6 cilindros",
                 "Exterior: Blanco",
@@ -164,14 +164,14 @@ public class CarUtils {
         return carsDetails;
     }
 
-    public static CarDetail findById(int id) {
+    public static CarDetail findById(String id) {
 
 //        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
 //            return carDetailsG.stream().filter(item -> item.getId() == id).findFirst().get();
 //        } else {
             CarDetail carDetail = new CarDetail();
             for (CarDetail item : carDetailsG) {
-                if (item.getId() == id) {
+                if (item.getId().equals(id) ) {
                     carDetail = item;
                 }
             }

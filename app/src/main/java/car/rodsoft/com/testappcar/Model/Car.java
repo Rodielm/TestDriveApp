@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 public class Car implements Serializable {
 
-    private int id;
+    private String id;
     private String name;
     private int year;
     private Double price;
@@ -13,7 +13,7 @@ public class Car implements Serializable {
 
     public Car(){}
 
-    public Car(int id,String name, Double price,int year ,int img) {
+    public Car(String id,String name, Double price,int year ,int img) {
         this.id = id;
         this.name = name;
         this.price = price;
@@ -21,7 +21,7 @@ public class Car implements Serializable {
         this.img = img;
     }
 
-    public Car(int id, String name, int year, Double price, int img, String urlImage) {
+    public Car(String id, String name, int year, Double price, int img, String urlImage) {
         this.id = id;
         this.name = name;
         this.year = year;
@@ -62,11 +62,11 @@ public class Car implements Serializable {
         this.img = img;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
